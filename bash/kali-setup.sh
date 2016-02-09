@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Kali linux setup script for Sana
+# Kali linux setup script for kali-rolling
 
 RELEASE=`lsb_release -c|awk '{print $2}'`
 
@@ -48,7 +48,7 @@ if [ ${RELEASE} == "kali-rolling" ]; then
 	apt-get install virtualbox virtualbox-dkms -y
 
     # setup vimrc
-    wget http://www.timgalyean.com/.vimrc -O ~/.vimrc
+    wget https://raw.githubusercontent.com/tgalyean/Scripts/master/dotFiles/vimrc -O ~/.vimrc
 else
     echo "This script was written for Kali Linux 2.0 Rolling.. you are running ${RELEASE}"
 fi

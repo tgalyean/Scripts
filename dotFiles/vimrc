@@ -1,0 +1,16 @@
+syntax on
+set title
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set number
+set paste
+augroup line_return  " Return vim to the last known position
+    au!
+    au BufreadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute "normal! g'\"" |
+                \ endif
+augroup END
