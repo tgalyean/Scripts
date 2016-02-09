@@ -3,16 +3,14 @@
 
 RELEASE=`lsb_release -c|awk '{print $2}'`
 
-if [ ${RELEASE} == "sana" ]; then
+if [ ${RELEASE} == "kali-rolling" ]; then
 
     # going to be working from tmp so cd there now..
     cd /tmp
 
     # add additional repositories
     echo '
-    deb http://security.kali.org/kali-security/ sana/updates main contrib non-free
-    deb-src http://security.kali.org/kali-security/ sana/updates main contrib non-free
-    deb http://http.kali.org/kali sana main non-free contrib' > /etc/apt/sources.list
+    deb http://http.kali.org/kali kali-rolling main contrib non-free' > /etc/apt/sources.list
 
     # update packages
     apt-get update
@@ -49,5 +47,5 @@ if [ ${RELEASE} == "sana" ]; then
     # setup vimrc
     wget http://www.timgalyean.com/.vimrc -O ~/.vimrc
 else
-    echo "This script was written for Kali Linux 2.0.. you are running ${RELEASE}"
+    echo "This script was written for Kali Linux 2.0 Rolling.. you are running ${RELEASE}"
 fi
