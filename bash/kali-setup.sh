@@ -44,6 +44,9 @@ if [ ${RELEASE} == "kali-rolling" ]; then
     rm -rf openvpn*
     rm -rf openssl*
 
+	# install virtualbox
+	apt-get install virtualbox virtualbox-dkms -y
+
     # setup vimrc
     wget http://www.timgalyean.com/.vimrc -O ~/.vimrc
 else
